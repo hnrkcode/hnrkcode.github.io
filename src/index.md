@@ -1,6 +1,7 @@
 ---
-title: Hello world
-layout: "base.njk"
+layout: "base.html"
+title: hnrkcode.github.io
+name: Henrik Petersson
 ---
 
-Hello world
+I'm a software developer and I love creating things.

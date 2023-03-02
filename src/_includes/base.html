@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <base target="_blank" />
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ '/public/css/style.css' | url }}" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+      type="text/css"
+    />
+    <script
+      type="text/javascript"
+      src="{{ '/public/js/particleground.js' | url }}"
+      crossorigin
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ '/public/js/demo.js' | url }}"
+    ></script>
+  </head>
+
+  <body>
+    <div id="particles">
+      <div id="intro">
+        <h2 style="font-family: 'Syncopate', sans-serif; font-weight: 10">
+          {{ name }}
+        </h2>
+        <hr
+          style="width: 50%; background-color: #e83951; border-color: #e83951"
+        />
+        {{ content }} {% include "links.html" %}
+      </div>
+    </div>
+  </body>
+</html>
