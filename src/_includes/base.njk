@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="{{ '/public/css/style.css' | url }}"
+      href="{{ '/css/main.css' | url }}"
       type="text/css"
     />
     <link
@@ -20,7 +20,12 @@
     />
     <script
       type="text/javascript"
-      src="{{ '/public/js/index.min.js' | url }}"
+      src="{{ '/js/particleground.js' | url }}"
+      crossorigin
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ '/js/index.js' | url }}"
       crossorigin
     ></script>
   </head>
@@ -34,7 +39,7 @@
         <hr
           style="width: 50%; background-color: #e83951; border-color: #e83951"
         />
-        {{ content }} {% include "links.html" %}
+        {{ content | safe }} {% include "links.njk" %}
       </div>
     </div>
   </body>
