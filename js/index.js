@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){particleground(document.getElementById("particles"),{dotColor:"#8d99ae",lineColor:"#8d99ae",particleRadius:0,proximity:150});var e=document.getElementById("intro");e.style.marginTop=-e.offsetHeight/2+"px"}),!1);
