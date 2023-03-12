@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.njk"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#2b2d42",
+        secondary: "#edf2f4",
+      },
+    },
   },
   plugins: [],
 };
