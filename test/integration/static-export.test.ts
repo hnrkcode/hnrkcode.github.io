@@ -5,8 +5,10 @@ import { expect, test } from "vitest";
 const html = await readFile("out/index.html", "utf8");
 const page = new DOMParser().parseFromString(html, "text/html");
 
-test("the static homepage includes a main heading before JavaScript runs", () => {
-  expect(page.querySelector("main h1")?.textContent?.trim()).toBeTruthy();
+test("the static homepage identifies the scene before JavaScript runs", () => {
+  expect(page.querySelector("main")?.getAttribute("aria-label")).toBe(
+    "Torus knot",
+  );
 });
 
 test("the export includes the local assets referenced by the homepage", async () => {

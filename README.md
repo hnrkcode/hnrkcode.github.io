@@ -18,6 +18,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## 3D scene
+
+The homepage displays the starter scene. Edit
+`app/scene/scene.tsx` to change the geometry, material, lighting, or camera.
+React Three Fiber renders the scene with Three.js, and Drei supplies the orbit
+controls. The viewer loads in the browser so the page can be statically exported
+for GitHub Pages with `npm run build`.
+
+Three.js and its types are pinned to r182 because React Three Fiber 9.8.2 uses
+`THREE.Clock` internally. Revisit the pin when upgrading Fiber. [Upstream issue](https://github.com/pmndrs/react-three-fiber/issues/3741)
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More

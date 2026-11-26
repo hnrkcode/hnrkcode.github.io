@@ -1,23 +1,14 @@
-import { cleanup, render, screen, within } from "@testing-library/react";
-import { afterEach, expect, test } from "vitest";
+import { render, screen, within } from "@testing-library/react";
+import { expect, test, vi } from "vitest";
 import Home from "@/app/page";
 
-afterEach(cleanup);
+vi.mock("@/app/scene/scene-viewer", () => ({
+  default: () => <canvas aria-label="Scene viewer" />,
+}));
 
-test("the homepage tells visitors where to start editing", () => {
+test("the scene viewer fills the homepage without accompanying text", () => {
   render(<Home />);
-  const main = within(screen.getByRole("main"));
-  expect(main.getByRole("heading", { level: 1 }).textContent).toBe(
-    "To get started, edit the page.tsx file.",
-  );
-});
-
-test("visitors can find the Next.js documentation from the homepage", () => {
-  render(<Home />);
-  const link = screen.getByRole<HTMLAnchorElement>("link", {
-    name: "Documentation",
-  });
-  const destination = new URL(link.href);
-  expect(destination.origin).toBe("https://nextjs.org");
-  expect(destination.pathname).toBe("/docs");
+  const main = screen.getByRole("main", { name: "Torus knot" });
+  expect(within(main).getByLabelText("Scene viewer")).toBeDefined();
+  expect(main.textContent).toBe("");
 });
